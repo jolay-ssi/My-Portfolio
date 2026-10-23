@@ -2,154 +2,170 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Moonbyul - Floating Dock Overlay</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:900&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Fira+Mono&display=swap" rel="stylesheet">
+  <meta name="theme-color" content="#d8f5eb">
+  <meta name="description" content="Portfolio of Jorilyn A. Paculdo, Assistant Engineer specializing in AI camera integration, IoT monitoring, automation, and systems integration.">
+  <title>Jorilyn Paculdo | Data & Monitoring & Systems Integration Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500&family=Montserrat:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="index.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-  <div class="site-content-scaled">
-    <!-- Floating Dock Overlay -->
-    <nav class="left-dock" id="leftDock">
-      <button class="hide-dock-btn" id="hideDockBtn" title="Hide Dock">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-             xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="2"
-             stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="15 18 9 12 15 6"/>
-        </svg>
-      </button>
-      <a href="#about" class="icon-link" title="About">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
-        </svg>
-      </a>
-      <a href="#projects" class="icon-link" title="Projects">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 0 0 .75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 0 0-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0 1 12 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 0 1-.673-.38m0 0A2.18 2.18 0 0 1 3 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 0 1 3.413-.387m7.5 0V5.25A2.25 2.25 0 0 0 13.5 3h-3a2.25 2.25 0 0 0-2.25 2.25v.894m7.5 0a48.667 48.667 0 0 0-7.5 0M12 12.75h.008v.008H12v-.008Z" />
-        </svg>
-      </a>
-      <a href="#contact" class="icon-link" title="Contact">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
-        </svg>
-      </a>
-    </nav>
-    <!-- Show Button -->
-    <button class="show-dock-btn" id="showDockBtn" title="Show Dock">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-           xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="2"
-           stroke-linecap="round" stroke-linejoin="round">
-        <polyline points="9 6 15 12 9 18"/>
-      </svg>
+  <a class="skip-link" href="#home">Skip to content</a>
+
+  <nav class="left-dock" id="leftDock" aria-label="Main navigation">
+    <button class="dock-toggle" id="hideDockBtn" type="button" aria-label="Hide navigation" title="Hide navigation">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
     </button>
+    <a href="#home" class="icon-link active" aria-label="Home" title="Home"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7M5 9v12h14V9M9 21v-7h6v7"/></svg></a>
+    <a href="#about" class="icon-link" aria-label="About" title="About"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></a>
+    <a href="#projects" class="icon-link" aria-label="Projects" title="Projects"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="15" rx="2"/><path d="M8 5V3h8v2M3 11h18M10 11v2h4v-2"/></svg></a>
+    <a href="#skills" class="icon-link" aria-label="Skills" title="Skills"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M14 5l-4 14"/></svg></a>
+    <a href="#certifications" class="icon-link" aria-label="Certifications" title="Certifications"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="5"/><path d="m8 12-1 9 5-3 5 3-1-9"/></svg></a>
+    <a href="#contact" class="icon-link" aria-label="Contact" title="Contact"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg></a>
+  </nav>
+  <button class="show-dock-btn" id="showDockBtn" type="button" aria-label="Show navigation" title="Show navigation">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+  </button>
 
-    <div class="main-content" id="mainContent">
-      <section id="about">
-        <!-- Animated SVG Floating Vector -->
-        <!-- Place this inside your <section id="about">, above .about-hero -->
-
-        <div class="about-hero">
-          <div class="about-text">
-            <span class="about-intro">Hi, my name is</span>
-            <h1 class="about-name">
-              <span>M</span><span>O</span><span>O</span><span>N</span><span>B</span><span>Y</span><span>U</span><span>L</span><span>!</span>
-            </h1>
-            <div class="about-title">
-              Software Developer passionate about web technologies, UI/UX, and building delightful user experiences.
-            </div>
-            <a href="#contact" class="about-btn">GET IN TOUCH</a>
+  <main id="mainContent">
+    <section class="hero section" id="home">
+      <div class="globe globe-large" aria-hidden="true"></div>
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="status-dot"></span> OPEN TO OPPORTUNITIES</p>
+          <p class="intro">Hi, I'm</p>
+          <h1 class="hero-name"><span class="name-line">JORILYN PACULDO</span><span class="name-period">.</span></h1>
+          <p class="hero-role">Assistant Engineer <span>·</span> Data & Monitoring, IoT & Systems Integration</p>
+          <p class="hero-description">I integrate AI cameras, sensors, embedded hardware, applications, and databases to support manufacturing digitalization and real-time monitoring.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#projects">Explore my work <span aria-hidden="true">↗</span></a>
+            <a class="button button-outline" href="#contact">Get in touch</a>
           </div>
-          <div class="about-image">
-            <div class="flip-card">
-              <div class="flip-card-inner">
-                <div class="flip-card-front">
-                  <img src="images/about-me-front.jpg" alt="Moonbyul Front" />
-                </div>
-                <div class="flip-card-back">
-                  <img src="images/about-me-back.jpg" alt="Moonbyul Back" />
-                </div>
-              </div>
-            </div>
-          </div>
+          <div class="hero-tech"><span>FOCUS AREAS</span><i>AI & IoT Integration</i><i>Industrial Systems</i><i>Data & Monitoring</i></div>
         </div>
-      </section>
+        <div class="hero-visual">
+          <div class="portrait-frame">
+            <!-- Replace this placeholder with your own image: images/profile.jpg -->
+            <!-- <img src="images/profile.jpg" alt="Portrait of Jorilyn A. Paculdo" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"> -->
+            <img src="images/profile.jpg" alt="Portrait of Jorilyn">
+            <div class="portrait-placeholder"><span class="placeholder-mark">M.</span><span>ADD YOUR PROFILE PHOTO</span><small>Save your image as images/profile.jpg</small></div>
+            <div class="portrait-caption"><span>PORTFOLIO / 2026</span><span>01 — 06</span></div>
+          </div>
+          <div class="floating-note note-top"><span class="note-icon">⌘</span><span><b>Problem solver</b><small>Curious by nature</small></span></div>
+          <div class="floating-note note-bottom"><span class="note-icon">✓</span><span><b>Always learning</b><small>One project at a time</small></span></div>
+        </div>
+      </div>
+      <a class="scroll-cue" href="#about"><span></span> SCROLL TO EXPLORE</a>
+    </section>
 
-      <section id="projects">
-        <h2>Projects</h2>
-      </section>
+    <section class="section section-pad" id="about">
+      <div class="section-heading">
+        <p class="eyebrow">01 / A LITTLE ABOUT ME</p>
+        <h2>Connecting systems. <span>Solving real problems.</span></h2>
+        <p class="section-lead">I’m an Assistant Engineer and Cum Laude Computer Engineering graduate with hands-on experience in AI camera integration, IoT-based monitoring, software modification, and industrial systems integration in electronics manufacturing.</p>
+      </div>
+      <div class="about-grid">
+        <article class="about-story panel">
+          <p class="panel-kicker">MY STORY</p>
+          <h3>From fixing problems to building solutions.</h3>
+          <p>My work includes modifying Python applications, preparing and annotating image datasets, converting ONNX models, acquiring sensor data, integrating SQL Server, and configuring industrial communication protocols. I help connect production equipment with existing systems to support production digitalization, process control, and operational efficiency.</p>
+          <p>I enjoy working across software and hardware boundaries—from camera and sensor integration to embedded controllers, machine communication, and automated alerts. I aim to build reliable solutions that improve visibility, compliance, and efficiency in production environments.</p>
+          <div class="about-facts">
+            <div><span class="fact-number">01</span><span>AI & IoT integration</span></div>
+            <div><span class="fact-number">02</span><span>Industrial communication</span></div>
+            <div><span class="fact-number">03</span><span>Production digitalization</span></div>
+          </div>
+        </article>
+        <article class="education-card panel">
+          <p class="panel-kicker">EDUCATION</p>
+          <div class="education-icon">✳</div>
+          <h3>B.S. in Computer Engineering</h3>
+          <p class="muted">Cavite State University – Carmona</p>
+          <p class="muted">2023 · Cum Laude</p>
+          <div class="card-rule"></div>
+          <p class="panel-kicker">CURRENT DIRECTION</p>
+          <h3>IT Operations + Industrial Systems</h3>
+          <p class="muted">DOST Merit Scholar · Iskolar ng Bayan ng Carmona Cavite (IBCC) · Civil Service Eligible – Honor Graduate</p>
+        </article>
+      </div>
+      <div class="experience-block">
+        <div class="subheading"><p class="eyebrow">THE JOURNEY</p><h3>Experience highlights</h3></div>
+        <div class="timeline">
+          <article class="timeline-item"><span class="timeline-dot"></span><div class="timeline-meta">OCT 2023 — PRESENT <span>ROHM ELECTRONICS PHILIPPINES INC.</span></div><h4>Assistant Engineer 1 – Automation, IoT & Systems Integration</h4><p>Part of the ICT Division, Digitalize System Integrator / OpTech LSI. Develop and integrate AI- and IoT-enabled manufacturing solutions connecting cameras, sensors, applications, and databases for automated inspection and real-time monitoring.</p><small>Configure communication protocols and modify machine programs when needed to connect production equipment with system PCs and existing platforms.</small></article>
+          <article class="timeline-item"><span class="timeline-dot"></span><div class="timeline-meta">SELECTED PROJECTS <span>MANUFACTURING DIGITALIZATION</span></div><h4>AI inspection, monitoring & access-control systems</h4><p>Contributed to AI camera reel-packing verification, real-time environmental monitoring with automated SMS/email alerts, ESD-based access control, and motorized AGV integration for inter-process material transport.</p><small>Share only project details and images approved for public use.</small></article>
+        </div>
+      </div>
+    </section>
 
-      <section id="contact">
-        <h2>Contact</h2>
-      </section>
-    </div>
-  </div>
+    <section class="section section-pad projects-section" id="projects">
+      <div class="section-heading section-heading-row">
+        <div><p class="eyebrow">02 / SELECTED WORK</p><h2>Engineering projects with <span>real-world impact.</span></h2><p class="section-lead">Selected AI, IoT, embedded systems, and industrial integration projects from manufacturing environments.</p></div>
+        <div class="project-filters" role="group" aria-label="Filter projects">
+          <button class="filter-btn active" data-filter="all">All</button><button class="filter-btn" data-filter="web">Web</button><button class="filter-btn" data-filter="it">IT / Data & Monitoring</button>
+        </div>
+      </div>
+      <div class="project-grid">
+        <article class="project-card" data-category="it">
+          <div class="project-art art-globe"><span class="art-label">AI / 001</span><div class="mini-globe"></div><span class="art-bottom">COMPUTER VISION</span></div>
+          <div class="project-content"><div class="project-type">AI CAMERA / COMPUTER VISION</div><h3>AI Camera Reel Packing Verification</h3><p>Integrated an AI camera into the existing Advanced Process Control System to verify required packing components for each reel and help prevent incomplete packing. Prepared and annotated image datasets for missing-item detection.</p><div class="tag-list"><span>AI Camera</span><span>Image Annotation</span><span>ONNX</span><span>APC Integration</span></div><div class="project-links"><a href="#contact">Discuss project <span>↗</span></a><span class="coming-soon">CASE STUDY</span></div></div>
+        </article>
+        <article class="project-card" data-category="it">
+          <div class="project-art art-dashboard"><span class="art-label">IOT / 002</span><div class="mock-dashboard"><div></div><div></div><div></div><div></div><div></div><div></div></div><span class="art-bottom">REAL-TIME MONITORING</span></div>
+          <div class="project-content"><div class="project-type">IOT / MONITORING</div><h3>Production Environment Real-Time Monitoring</h3><p>Extended an IoT-based monitoring system to temperature-controlled storage, with continuous visual temperature monitoring and SMS/email alerts for abnormal conditions or missing sensor readings.</p><div class="tag-list"><span>IoT</span><span>Sensor Data</span><span>SQL Server</span><span>Automated Alerts</span></div><div class="project-links"><a href="#contact">Discuss project <span>↗</span></a><span class="coming-soon">CASE STUDY</span></div></div>
+        </article>
+        <article class="project-card" data-category="it">
+          <div class="project-art art-tickets"><span class="art-label">CONTROL / 003</span><div class="ticket-stack"><span>ESD TEST RESULT</span><span>RFID ACCESS CONTROL</span><span>ENTRY / EXIT LOG ✓</span></div><span class="art-bottom">PROCESS COMPLIANCE</span></div>
+          <div class="project-content"><div class="project-type">EMBEDDED / ACCESS CONTROL</div><h3>ESD Monitoring & Access Control</h3><p>Integrated ESD testers with RFID-controlled entry barriers and employee tap-in/tap-out logging. Also integrated a walkthrough metal detector with an assembly exit turnstile.</p><div class="tag-list"><span>ESD</span><span>RFID</span><span>Access Control</span><span>System Integration</span></div><div class="project-links"><a href="#contact">Discuss project <span>↗</span></a><span class="coming-soon">CASE STUDY</span></div></div>
+        </article>
+        <article class="project-card" data-category="it">
+          <div class="project-art art-globe"><span class="art-label">EMBEDDED / 004</span><div class="mini-globe"></div><span class="art-bottom">MATERIAL TRANSPORT</span></div>
+          <div class="project-content"><div class="project-type">EMBEDDED SYSTEMS / AUTOMATION</div><h3>Motorized Auto-Guided Transport Equipment (MATE – AGV)</h3><p>Designed and integrated a motorized automated guided vehicle for inter-process material transfer, combining embedded controls, motion control, electrical wiring, and mechanical assembly.</p><div class="tag-list"><span>Embedded Controls</span><span>Motion Control</span><span>Electrical Wiring</span><span>AGV</span></div><div class="project-links"><a href="#contact">Discuss project <span>↗</span></a><span class="coming-soon">CASE STUDY</span></div></div>
+        </article>
+      </div>
+      <p class="section-footnote">These project summaries are based on the résumé. Add only approved public images, repository links, or detailed case studies; do not publish confidential manufacturing data.</p>
+    </section>
 
-  <script>
-    // Hide/show dock logic
-    const dock = document.getElementById('leftDock');
-    const hideBtn = document.getElementById('hideDockBtn');
-    const showBtn = document.getElementById('showDockBtn');
-    hideBtn.onclick = () => {
-      dock.classList.add('hidden');
-      showBtn.classList.add('visible');
-      showBtn.style.top = dock.style.top || "100px";
-    };
-    showBtn.onclick = () => {
-      dock.classList.remove('hidden');
-      showBtn.classList.remove('visible');
-    };
-    // Make the whole dock draggable (except on buttons/links)
-    let isDragging = false;
-    let offsetY = 0;
-    dock.addEventListener('mousedown', function(e) {
-      if (
-        e.target.closest('button') ||
-        e.target.closest('a')
-      ) return;
-      isDragging = true;
-      offsetY = e.clientY - dock.getBoundingClientRect().top;
-      document.body.style.userSelect = 'none';
-    });
-    document.addEventListener('mousemove', function(e) {
-      if (!isDragging) return;
-      let newTop = e.clientY - offsetY;
-      const minTop = 0;
-      const maxTop = window.innerHeight - dock.offsetHeight;
-      newTop = Math.max(minTop, Math.min(maxTop, newTop));
-      dock.style.top = newTop + 'px';
-      if (dock.classList.contains('hidden')) {
-        showBtn.style.top = newTop + 'px';
-      }
-    });
-    document.addEventListener('mouseup', function() {
-      isDragging = false;
-      document.body.style.userSelect = '';
-    });
-    // Touch support
-    dock.addEventListener('touchstart', function(e) {
-      if (
-        e.target.closest('button') ||
-        e.target.closest('a')
-      ) return;
-      isDragging = true;
-      offsetY = e.touches[0].clientY - dock.getBoundingClientRect().top;
-    });
-    document.addEventListener('touchmove', function(e) {
-      if (!isDragging) return;
-      let newTop = e.touches[0].clientY - offsetY;
-      const minTop = 0;
-      const maxTop = window.innerHeight - dock.offsetHeight;
-      newTop = Math.max(minTop, Math.min(maxTop, newTop));
-      dock.style.top = newTop + 'px';
-      if (dock.classList.contains('hidden')) {
-        showBtn.style.top = newTop + 'px';
-      }
-    });
-    document.addEventListener('touchend', function() {
-      isDragging = false;
-    });
-  </script>
+    <section class="section section-pad" id="skills">
+      <div class="section-heading"><p class="eyebrow">03 / MY TOOLKIT</p><h2>Skills & <span>capabilities.</span></h2><p class="section-lead">Technical skills and platforms listed in my professional résumé.</p></div>
+      <div class="skills-grid">
+        <article class="skill-card"><div class="skill-index">01</div><div class="skill-symbol">&lt;/&gt;</div><h3>Programming & Development</h3><p>Application modification and development using programming languages and .NET technologies.</p><div class="tag-list"><span>C#</span><span>VB.NET</span><span>C++</span><span>Python</span><span>.NET</span><span>WinForms</span><span>HTML5</span><span>CSS3</span><span>JavaScript</span></div></article>
+        <article class="skill-card"><div class="skill-index">02</div><div class="skill-symbol">◎</div><h3>AI Camera & Computer Vision</h3><p>Camera integration, image collection and annotation, dataset preparation, model preparation, and ONNX conversion/export.</p><div class="tag-list"><span>AI Camera</span><span>Image Annotation</span><span>.pt Models</span><span>ONNX</span></div></article>
+        <article class="skill-card"><div class="skill-index">03</div><div class="skill-symbol">⌁</div><h3>IoT & Data Integration</h3><p>Sensor integration, data acquisition, listener applications, automated alerts, and SQL Server integration.</p><div class="tag-list"><span>SQL Server</span><span>Sensor Data</span><span>SMS / Email Alerts</span><span>Device Communication</span></div></article>
+        <article class="skill-card"><div class="skill-index">04</div><div class="skill-symbol">▦</div><h3>Embedded & Industrial Systems</h3><p>Embedded hardware, machine-program modification, production data integration, and industrial communication protocols.</p><div class="tag-list"><span>M5Stack Core2</span><span>Arduino</span><span>ADAM-6050</span><span>TCP/IP</span><span>UDP</span><span>RS-232</span><span>Modbus RTU/TCP</span></div></article>
+      </div>
+      <p class="section-footnote">Additional tools: Visual Studio, VS Code, Arduino IDE, SQL Server Management Studio (SSMS), and GitHub.</p>
+    </section>
+
+    <section class="section section-pad cert-section" id="certifications">
+      <div class="section-heading"><p class="eyebrow">04 / LEARNING & GROWTH</p><h2>Certifications & <span>training.</span></h2><p class="section-lead">Academic honors and credentials documented in my résumé.</p></div>
+      <div class="cert-grid">
+        <article class="cert-card"><div class="cert-seal">✓</div><div><p class="panel-kicker">CERTIFICATE / TRAINING</p><h3>Cum Laude</h3><p>Cavite State University – Carmona</p><p class="muted">B.S. in Computer Engineering · 2023</p><span class="credential-status">ACADEMIC HONOR</span></div></article>
+        <article class="cert-card"><div class="cert-seal">+</div><div><p class="panel-kicker">CONTINUOUS LEARNING</p><h3>DOST Merit Scholar & IBCC Scholar</h3><p>DOST Merit Scholarship · Iskolar ng Bayan ng Carmona Cavite</p><p class="muted">Civil Service Eligible – Honor Graduate</p><span class="credential-status">RÉSUMÉ CREDENTIALS</span></div></article>
+      </div>
+      <p class="section-footnote">The résumé lists these honors and eligibility credentials. Add separate training certificates only if you have earned them and can verify their details.</p>
+    </section>
+
+    <section class="section section-pad contact-section" id="contact">
+      <div class="contact-orbit" aria-hidden="true"></div>
+      <div class="contact-layout">
+        <div class="contact-copy"><p class="eyebrow">05 / LET'S CONNECT</p><h2>Have a challenge?<br><span>Let’s talk.</span></h2><p class="section-lead">I’m open to opportunities involving automation, IoT, AI camera integration, software development, and industrial systems integration.</p><div class="contact-detail"><span class="contact-detail-icon">@</span><div><small>EMAIL</small><a id="emailLink" href="mailto:jorilynpaculdo@gmail.com">jorilynpaculdo@gmail.com</a></div></div><div class="contact-detail"><span class="contact-detail-icon">in</span><div><small>LINKEDIN</small><a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">www.linkedin.com/in/jorilynpaculdo ↗</a></div></div><div class="contact-detail"><span class="contact-detail-icon">⌘</span><div><small>GITHUB</small><a href="https://github.com/" target="_blank" rel="noreferrer">Add your GitHub profile ↗</a></div></div></div>
+        <form class="contact-form panel" id="contactForm">
+          <p class="panel-kicker">SEND A MESSAGE</p>
+          <label for="contactName">Your name</label><input id="contactName" name="name" autocomplete="name" placeholder="Jane Doe" required>
+          <label for="contactEmail">Your email</label><input id="contactEmail" name="email" type="email" autocomplete="email" placeholder="jane@example.com" required>
+          <label for="contactSubject">Subject</label><input id="contactSubject" name="subject" placeholder="Let's work together" required>
+          <label for="contactMessage">Message</label><textarea id="contactMessage" name="message" rows="4" placeholder="Tell me a little about what you have in mind..." required></textarea>
+          <button class="button button-primary form-submit" type="submit">Prepare email <span aria-hidden="true">↗</span></button>
+          <p class="form-note">This opens your default email app. Replace the placeholder email in script.js first.</p>
+          <p class="form-status" id="formStatus" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <footer class="site-footer"><a class="footer-brand" href="#home">M<span>.</span></a><p>Engineering practical systems through integration, automation, and continuous improvement.</p><a href="#home">BACK TO TOP ↑</a><small>© <span id="year"></span> Jorilyn A. Paculdo.</small></footer>
+  </main>
 </body>
 </html>
