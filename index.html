@@ -14,6 +14,7 @@
 </head>
 <body>
   <a class="skip-link" href="#home">Skip to content</a>
+  <div class="site-atmosphere" aria-hidden="true"></div>
 
   <nav class="left-dock" id="leftDock" aria-label="Main navigation">
     <button class="dock-toggle" id="hideDockBtn" type="button" aria-label="Hide navigation" title="Hide navigation">
@@ -50,8 +51,8 @@
           <div class="portrait-frame">
             <!-- Replace this placeholder with your own image: images/profile.jpg -->
             <!-- <img src="images/profile.jpg" alt="Portrait of Jorilyn A. Paculdo" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"> -->
-            <img src="images/profile.jpg" alt="Portrait of Jorilyn">
-            <div class="portrait-placeholder"><span class="placeholder-mark">M.</span><span>ADD YOUR PROFILE PHOTO</span><small>Save your image as images/profile.jpg</small></div>
+            <img src="images/profile.png" alt="Portrait of Jorilyn" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
+            <div class="portrait-placeholder"><span class="placeholder-mark">J.</span><span>ADD YOUR PROFILE PHOTO</span><small>Save your image as images/profile.jpg</small></div>
             <div class="portrait-caption"><span>PORTFOLIO / 2026</span><span>01 — 06</span></div>
           </div>
           <div class="floating-note note-top"><span class="note-icon">⌘</span><span><b>Problem solver</b><small>Curious by nature</small></span></div>
@@ -61,44 +62,155 @@
       <a class="scroll-cue" href="#about"><span></span> SCROLL TO EXPLORE</a>
     </section>
 
-    <section class="section section-pad" id="about">
-      <div class="section-heading">
-        <p class="eyebrow">01 / A LITTLE ABOUT ME</p>
-        <h2>Connecting systems. <span>Solving real problems.</span></h2>
-        <p class="section-lead">I’m an Assistant Engineer and Cum Laude Computer Engineering graduate with hands-on experience in AI camera integration, IoT-based monitoring, software modification, and industrial systems integration in electronics manufacturing.</p>
-      </div>
-      <div class="about-grid">
-        <article class="about-story panel">
-          <p class="panel-kicker">MY STORY</p>
-          <h3>From fixing problems to building solutions.</h3>
-          <p>My work includes modifying Python applications, preparing and annotating image datasets, converting ONNX models, acquiring sensor data, integrating SQL Server, and configuring industrial communication protocols. I help connect production equipment with existing systems to support production digitalization, process control, and operational efficiency.</p>
-          <p>I enjoy working across software and hardware boundaries—from camera and sensor integration to embedded controllers, machine communication, and automated alerts. I aim to build reliable solutions that improve visibility, compliance, and efficiency in production environments.</p>
-          <div class="about-facts">
-            <div><span class="fact-number">01</span><span>AI & IoT integration</span></div>
-            <div><span class="fact-number">02</span><span>Industrial communication</span></div>
-            <div><span class="fact-number">03</span><span>Production digitalization</span></div>
-          </div>
-        </article>
-        <article class="education-card panel">
-          <p class="panel-kicker">EDUCATION</p>
-          <div class="education-icon">✳</div>
-          <h3>B.S. in Computer Engineering</h3>
-          <p class="muted">Cavite State University – Carmona</p>
-          <p class="muted">2023 · Cum Laude</p>
-          <div class="card-rule"></div>
-          <p class="panel-kicker">CURRENT DIRECTION</p>
-          <h3>IT Operations + Industrial Systems</h3>
-          <p class="muted">DOST Merit Scholar · Iskolar ng Bayan ng Carmona Cavite (IBCC) · Civil Service Eligible – Honor Graduate</p>
-        </article>
-      </div>
-      <div class="experience-block">
-        <div class="subheading"><p class="eyebrow">THE JOURNEY</p><h3>Experience highlights</h3></div>
-        <div class="timeline">
-          <article class="timeline-item"><span class="timeline-dot"></span><div class="timeline-meta">OCT 2023 — PRESENT <span>ROHM ELECTRONICS PHILIPPINES INC.</span></div><h4>Assistant Engineer 1 – Automation, IoT & Systems Integration</h4><p>Part of the ICT Division, Digitalize System Integrator / OpTech LSI. Develop and integrate AI- and IoT-enabled manufacturing solutions connecting cameras, sensors, applications, and databases for automated inspection and real-time monitoring.</p><small>Configure communication protocols and modify machine programs when needed to connect production equipment with system PCs and existing platforms.</small></article>
-          <article class="timeline-item"><span class="timeline-dot"></span><div class="timeline-meta">SELECTED PROJECTS <span>MANUFACTURING DIGITALIZATION</span></div><h4>AI inspection, monitoring & access-control systems</h4><p>Contributed to AI camera reel-packing verification, real-time environmental monitoring with automated SMS/email alerts, ESD-based access control, and motorized AGV integration for inter-process material transport.</p><small>Share only project details and images approved for public use.</small></article>
+    
+
+<!-- NEW -->
+<section class="section section-pad about-section" id="about">
+
+  <!-- TOP: PROFESSIONAL PROFILE -->
+  <div class="section-heading about-intro">
+    <p class="eyebrow">01 / ABOUT ME</p>
+
+    <h2>Connecting systems. <span>Solving real problems.</span></h2>
+
+    <p class="section-lead">
+      I’m an Assistant Engineer and Cum Laude Computer Engineering graduate with hands-on experience in AI camera integration, IoT-based monitoring, software modification, and industrial systems integration in electronics manufacturing.
+    </p>
+  </div>
+
+  <!-- BOTTOM: TWO SIDE-BY-SIDE CARDS -->
+  <div class="about-grid education-work-grid">    
+      <!-- WORK EXPERIENCE MAIN CARD -->
+      <div class="experience-block panel">
+
+        <div class="experience-heading-panel">
+          <p class="panel-kicker">WORK EXPERIENCE </p>
         </div>
+
+        <div class="experience-timeline">
+
+        <!-- MOST RECENT EXPERIENCE -->
+          <article class="experience-item">
+            <div class="experience-marker" aria-hidden="true">
+              <span>▣</span>
+            </div>
+
+            <div class="experience-card">
+              <div class="experience-card-heading">
+                <div class="experience-company-logo-wrapper">
+                  <img src="images/ROHM.png" alt="ROHM logo">
+                </div>
+                <h3>Assistant Engineer 1 – Automation, IoT &amp; Systems Integration</h3>
+                <span class="experience-date">Oct 2023 – Present</span>
+              </div>
+
+              <p class="experience-company">
+                ROHM Electronics Philippines Inc.
+              </p>
+
+              <p>
+                Develop and integrate AI- and IoT-enabled manufacturing
+                solutions connecting cameras, sensors, applications, and
+                databases for automated inspection and real-time monitoring.
+              </p>
+
+              <ul>
+                <li>Integrated AI cameras for reel-level packing verification.</li>
+                <li>Implemented real-time environmental monitoring and automated alerts.</li>
+                <li>Integrated embedded controllers, sensors, and production equipment with software systems.</li>
+              </ul>
+            </div>
+          </article>
+
+        <!-- OLDER EXPERIENCE: REPLACE WITH YOUR ACTUAL OJT DETAILS -->
+          <article class="experience-item">
+            <div class="experience-marker" aria-hidden="true">
+              <span>▣</span>
+            </div>
+
+            <div class="experience-card">
+              <div class="experience-card-heading">
+                <div class="experience-company-logo-wrapper">
+                  <img src="images/Carmona.png" alt="Carmona logo">
+                </div>
+                <h3>Junior IT Support (Intern)</h3>
+                <span class="experience-date">Jul 2022 – Aug 2022</span>
+              </div>
+
+              <p class="experience-company">City Government of Carmona, Cavite</p>
+
+              <p>
+                Provided IT support to government office personnel by assisting with computer hardware, printer, and software troubleshooting to help maintain smooth day-to-day office operations.
+              </p>
+
+              <ul>
+                <li>Assisted in troubleshooting computer hardware, software, and printer-related issues.</li>
+                <li>Supported basic computer maintenance and technical assistance for office personnel.</li>
+                <li>Helped identify and resolve common IT issues to minimize disruptions to daily office operations.</li>
+              </ul>
+            </div>
+          </article>
+
+        </div>
+
       </div>
-    </section>
+
+      <!-- EDUCATION MAIN CARD -->
+      <!-- <article class="education-card panel"> -->
+        <!-- <p class="panel-kicker">EDUCATION</p> -->
+
+        <!-- Keep all existing education entries here -->
+        <div class="education-column">
+          <article class="education-card panel">
+            <p class="panel-kicker">EDUCATION</p>
+
+            <!-- Keep all 3 existing education-entry elements here -->
+            <div class="education-entry">
+            <div class="education-entry-icon">
+              <img src="images/CvSU.png" alt="Cavite State University logo">
+            </div>
+            <div class="education-entry-content">
+              <h3>B.S. in Computer Engineering</h3>
+              <p class="muted">Cavite State University – Carmona</p>
+              <p class="muted">2023 · Cum Laude</p>
+              <p class="muted">DOST Merit Scholar · IBCC Scholar</p>
+            </div>
+          </div>
+
+          <div class="card-rule"></div>
+
+          <div class="education-entry">
+            <div class="education-entry-icon">
+              <img src="images/STI.jpg" alt="STI College Carmona logo">
+            </div>
+            <div class="education-entry-content">
+              <span class="eyebrow">SENIOR HIGH SCHOOL</span>
+              <h3>STI College Carmona</h3>
+              <p class="muted">2019 · STEM Strand · Class Valedictorian</p>
+            </div>
+          </div>
+
+          <div class="card-rule"></div>
+
+          <div class="education-entry">
+            <div class="education-entry-icon">
+              <img src="images/CNHS.png" alt="Carmona National High School logo">
+            </div>
+            <div class="education-entry-content">
+              <span class="eyebrow">JUNIOR HIGH SCHOOL</span>
+              <h3>Carmona National High School</h3>
+              <p class="muted">2017 · Science Class</p>
+            </div>
+          </div>
+
+          </article>
+        </div>
+      <!-- </article> -->
+    </div>
+
+</section>
+
+
 
     <section class="section section-pad projects-section" id="projects">
       <div class="section-heading section-heading-row">

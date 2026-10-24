@@ -324,3 +324,1380 @@ button, a { -webkit-tap-highlight-color: transparent; }
     padding-right: 24px !important;
   }
 }
+
+
+/* ===== Connected mint-globe atmosphere across the whole portfolio ===== */
+body {
+  position: relative;
+  isolation: isolate;
+  background: #e8f7f3;
+}
+
+.site-atmosphere {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 12% 16%, rgba(255,255,255,.84), transparent 42%),
+    radial-gradient(ellipse at 84% 80%, rgba(145,239,207,.42), transparent 48%),
+    linear-gradient(135deg, #e8f8f3 0%, #d9f7ed 50%, #e5e9ff 100%);
+}
+
+.site-atmosphere::before {
+  content: "";
+  position: absolute;
+  width: min(82vw, 940px);
+  aspect-ratio: 1;
+  right: clamp(-160px, 3vw, 90px);
+  top: 50%;
+  transform: translateY(-50%);
+  background: url("images/globe-background.svg") center / contain no-repeat;
+  opacity: .78;
+  filter: drop-shadow(0 20px 50px rgba(53, 176, 149, .08));
+  animation: globe-drift 22s ease-in-out infinite alternate;
+}
+
+.site-atmosphere::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: .18;
+  background-image:
+    linear-gradient(rgba(55, 172, 148, .2) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(55, 172, 148, .2) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: linear-gradient(to bottom, transparent 0%, #000 16%, #000 84%, transparent 100%);
+}
+
+@keyframes globe-drift {
+  from { transform: translateY(-51%) rotate(-2deg) scale(.98); }
+  to { transform: translateY(-49%) rotate(2deg) scale(1.02); }
+}
+
+#mainContent {
+  position: relative;
+  z-index: 1;
+}
+
+.hero { background: transparent !important; }
+.globe-large { display: none; }
+
+#about,
+#projects,
+#skills,
+#certifications,
+#contact {
+  background: transparent !important;
+}
+
+.panel,
+.education-card,
+.timeline-item,
+.project-card,
+.skill-card,
+.cert-card,
+.contact-form {
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.timeline-item { background: rgba(255,255,255,.42); }
+.project-card { background: rgba(255,255,255,.76); }
+.skill-card { background: rgba(255,255,255,.53); }
+.cert-card { background: rgba(255,255,255,.68); }
+.contact-section { background: transparent !important; }
+.site-footer { background: rgba(31, 53, 64, .96); }
+
+@media (min-width: 761px) {
+  .site-atmosphere::before {
+    width: min(76vw, 900px);
+    right: 4vw;
+    opacity: .88;
+  }
+}
+
+@media (max-width: 760px) {
+  .site-atmosphere::before {
+    width: 118vw;
+    max-width: none;
+    right: -40vw;
+    top: 44%;
+    opacity: .42;
+  }
+
+  .site-atmosphere::after {
+    background-size: 42px 42px;
+    opacity: .12;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-atmosphere::before { animation: none; }
+}
+
+
+
+/* Additional education history */
+.education-extra {
+  margin-top: 28px;
+}
+
+.education-level h3 {
+  margin: 12px 0 8px;
+  color: #203642;
+  font-size: 1.25rem;
+  line-height: 1.4;
+}
+
+.education-level p {
+  color: #607b83;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.education-divider {
+  height: 1px;
+  background: rgba(75, 190, 164, 0.3);
+  margin: 24px 0;
+}
+
+.education-level .eyebrow {
+  color: #6366f1;
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+}
+
+.education-icon {
+  width: 64px;
+  height: 64px;
+  display: grid;
+  place-items: center;
+  font-size: 2rem;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #d8f7eb, #e5e7ff);
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.12);
+  margin-bottom: 18px;
+}
+
+
+.education-entry {
+  display: grid;
+  grid-template-columns: 58px minmax(0, 1fr);
+  align-items: start;
+  gap: 18px;
+  padding: 10px 0;
+}
+
+.education-entry-icon {
+  width: 58px;
+  height: 58px;
+  border-radius: 19px;
+  display: grid;
+  place-items: center;
+  font-size: 1.75rem;
+  background: linear-gradient(
+    135deg,
+    #b4f6e0,
+    #e0e2ff
+  );
+  box-shadow: 0 8px 22px rgba(99, 102, 241, 0.10);
+}
+
+.education-entry-content {
+  min-width: 0;
+}
+
+.education-entry-content h3 {
+  margin: 3px 0 10px;
+  line-height: 1.3;
+}
+
+/* ===== Education card: icons beside each education entry ===== */
+.education-card {
+  min-width: 0;
+}
+
+.education-entry {
+  display: grid;
+  grid-template-columns: 58px minmax(0, 1fr);
+  align-items: start;
+  gap: 18px;
+  padding: 10px 0;
+}
+
+.education-entry-icon {
+  width: 58px;
+  height: 58px;
+  border-radius: 19px;
+  display: grid;
+  place-items: center;
+  font-size: 1.75rem;
+  line-height: 1;
+  background: linear-gradient(135deg, rgba(180, 246, 224, .92), rgba(224, 226, 255, .95));
+  box-shadow: 0 8px 22px rgba(99, 102, 241, .10);
+  flex-shrink: 0;
+}
+
+.education-entry-icon.school-icon {
+  font-size: 1.65rem;
+}
+
+.education-entry-content {
+  min-width: 0;
+}
+
+.education-entry-content h3 {
+  margin: 3px 0 10px;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+
+.education-entry-content p {
+  margin: 7px 0 0;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+
+.education-entry-content .eyebrow {
+  display: inline-block;
+  margin: 3px 0 8px;
+  color: var(--primary, #6366f1);
+  font-size: .68rem;
+  letter-spacing: .16em;
+  font-weight: 700;
+}
+
+.education-card .card-rule {
+  margin: 18px 0;
+}
+
+@media (max-width: 520px) {
+  .education-entry {
+    grid-template-columns: 46px minmax(0, 1fr);
+    gap: 13px;
+  }
+  .education-entry-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 15px;
+    font-size: 1.45rem;
+  }
+  .education-entry-icon.school-icon {
+    font-size: 1.35rem;
+  }
+}
+/* ===== Responsive education card: prevent text overflow on narrow screens ===== */
+.education-card,
+.education-entry,
+.education-entry-content {
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.education-card {
+  height: auto;
+  overflow-wrap: anywhere;
+}
+
+.education-entry {
+  grid-template-columns: clamp(38px, 4vw, 58px) minmax(0, 1fr);
+  gap: clamp(10px, 1.5vw, 18px);
+}
+
+.education-entry-icon {
+  width: clamp(38px, 4vw, 58px);
+  height: clamp(38px, 4vw, 58px);
+  font-size: clamp(1.15rem, 2vw, 1.75rem);
+}
+
+.education-entry-content h3 {
+  font-size: clamp(1rem, 1.35vw, 1.45rem);
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+.education-entry-content p,
+.education-entry-content .muted,
+.education-entry-content .eyebrow {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+.education-card img,
+.education-card svg {
+  max-width: 100%;
+}
+
+/* At smaller desktop/tablet widths, stack cards if the two-column layout gets tight. */
+@media (max-width: 900px) {
+  .education-card {
+    width: 100%;
+  }
+
+  .education-entry {
+    grid-template-columns: 44px minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .education-entry-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+    font-size: 1.35rem;
+  }
+
+  .education-entry-content h3 {
+    font-size: 1.08rem;
+  }
+}
+@media (max-width: 520px) {
+  .education-card {
+    padding: clamp(16px, 5vw, 24px);
+  }
+
+  .education-entry {
+    grid-template-columns: 38px minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  .education-entry-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 12px;
+    font-size: 1.15rem;
+  }
+
+  .education-entry-content h3 {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  .education-entry-content p {
+    font-size: .9rem;
+    line-height: 1.6;
+  }
+
+  .education-card .card-rule {
+    margin: 14px 0;
+  }
+}
+.education-entry-icon {
+  width: 58px;
+  height: 58px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  padding: 8px;
+  box-sizing: border-box;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #d8f7eb, #e5e7ff);
+}
+
+.education-entry-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+@media (max-width: 520px) {
+  .education-entry-icon {
+    width: 42px;
+    height: 42px;
+    padding: 5px;
+  }
+}
+
+/* Education card: keep school logos separated from text */
+.education-entry {
+  grid-template-columns: 58px minmax(0, 1fr);
+  column-gap: 20px;
+  align-items: start;
+  min-width: 0;
+}
+
+.education-entry-icon {
+  width: 58px;
+  height: 58px;
+  flex-shrink: 0;
+  margin-right: 0;
+}
+
+.education-entry-content {
+  min-width: 0;
+  overflow-wrap: break-word;
+}
+
+.education-entry-content h3,
+.education-entry-content p {
+  overflow-wrap: anywhere;
+}
+
+/* Smaller browser widths */
+@media (max-width: 1100px) {
+  .education-entry {
+    grid-template-columns: 50px minmax(0, 1fr);
+    column-gap: 16px;
+  }
+
+  .education-entry-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 15px;
+  }
+}
+
+/* Very narrow screens */
+@media (max-width: 440px) {
+  .education-entry {
+    grid-template-columns: 44px minmax(0, 1fr);
+    column-gap: 14px;
+  }
+
+  .education-entry-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 13px;
+  }
+}
+
+/* Experience section heading */
+.experience-layout > .section-heading {
+  max-width: 100%;
+  margin-bottom: 32px;
+}
+
+/* Two-column layout: introduction left, timeline right */
+.experience-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: 36px;
+  align-items: start;
+  margin-top: 90px;
+}
+
+/* Timeline track */
+.experience-timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-left: 34px;
+}
+
+/* Vertical line */
+.experience-timeline::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 10px;
+  width: 2px;
+  background: linear-gradient(to bottom, #6366f1, #6ee7c8);
+}
+
+/* Timeline entry */
+.experience-item {
+  position: relative;
+  min-width: 0;
+}
+
+/* Circle and briefcase marker */
+.experience-marker {
+  position: absolute;
+  top: 22px;
+  left: -34px;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border: 3px solid #b9d7ff;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #6366f1;
+  box-shadow: 0 4px 12px rgba(32, 70, 100, 0.12);
+  font-size: 13px;
+}
+
+/* Timeline card */
+.experience-card {
+  min-width: 0;
+  padding: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.68);
+  box-shadow: 0 8px 24px rgba(32, 90, 75, 0.06);
+  overflow-wrap: anywhere;
+}
+
+.experience-card-heading {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px 16px;
+}
+
+.experience-card h3 {
+  flex: 1 1 220px;
+  margin: 0;
+  color: #203642;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.4;
+}
+
+.experience-date {
+  color: #6366f1;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.experience-company {
+  margin: 12px 0;
+  color: #4d79cc;
+  font-weight: 500;
+}
+
+.experience-card p,
+.experience-card li {
+  color: #607b83;
+  font-size: 0.9rem;
+  line-height: 1.75;
+}
+
+.experience-card ul {
+  padding-left: 20px;
+}
+
+.experience-card li {
+  margin-bottom: 6px;
+}
+
+/* Responsive layout */
+@media (max-width: 900px) {
+  .experience-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  .experience-layout > .section-heading {
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .experience-timeline {
+    padding-left: 28px;
+  }
+
+  .experience-timeline::before {
+    left: 7px;
+  }
+
+  .experience-marker {
+    left: -28px;
+    width: 22px;
+    height: 22px;
+  }
+
+  .experience-card {
+    padding: 18px;
+  }
+}
+
+.education-work-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  align-items: start;
+  gap: 32px;
+}
+
+.education-work-grid > .education-card,
+.education-work-grid > .experience-block {
+  width: 100%;
+  min-width: 0;
+  margin-top: 0;
+}
+
+.education-work-grid .experience-block .section-heading {
+  margin-bottom: 28px;
+}
+
+@media (max-width: 900px) {
+  .education-work-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 36px;
+  }
+}
+
+/* Refine Education + Work Experience layout */
+.education-work-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  align-items: start;
+  gap: 28px;
+}
+
+/* Education card */
+.education-work-grid > .education-card {
+  width: 100%;
+  min-width: 0;
+}
+
+/* Work experience column */
+.education-work-grid > .experience-block {
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+}
+
+/* Keep the title proportional to other section titles */
+.education-work-grid > .experience-block > .section-heading {
+  margin: 0 0 20px;
+}
+
+.education-work-grid > .experience-block > .section-heading h2 {
+  font-size: clamp(1.8rem, 2.5vw, 2.6rem);
+  line-height: 1.15;
+  letter-spacing: -0.04em;
+}
+
+/* Improve timeline card readability */
+.experience-card {
+  padding: 24px;
+}
+
+.experience-card h3 {
+  font-size: 1rem;
+  line-height: 1.45;
+}
+
+.experience-card p,
+.experience-card li {
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+/* Prevent decorative globe from overpowering the content */
+.education-work-grid {
+  position: relative;
+  z-index: 1;
+}
+
+/* Stack on smaller screens */
+@media (max-width: 900px) {
+  .education-work-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 36px;
+  }
+
+  .education-work-grid > .experience-block > .section-heading h2 {
+    font-size: clamp(1.8rem, 5vw, 2.4rem);
+  }
+}
+
+/* Align the introduction above both columns */
+#about > .about-intro {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 0 32px;
+}
+
+/* Keep Education and Work Experience aligned */
+#about > .education-work-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  align-items: start;
+  gap: 28px;
+  margin-top: 0;
+}
+
+/* Both columns start at the same vertical position */
+#about > .education-work-grid > .education-card,
+#about > .education-work-grid > .experience-block {
+  align-self: start;
+  margin-top: 0;
+  min-width: 0;
+  width: 100%;
+}
+
+/* Remove extra heading spacing above the timeline */
+#about .education-work-grid > .experience-block > .section-heading {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+/* Keep the timeline cards and line intact */
+#about .experience-timeline {
+  margin-top: 0;
+}
+
+@media (max-width: 900px) {
+  #about > .education-work-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+  }
+}
+
+/* ABOUT SECTION */
+.about-section {
+  position: relative;
+  scroll-margin-top: 32px;
+}
+
+/* Introduction spans the full width above both columns */
+.about-section > .about-intro {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 0 32px;
+}
+
+/* Education and Work Experience start at the same height */
+.about-section > .education-work-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  align-items: start;
+  gap: 28px;
+  width: 100%;
+  margin: 0;
+}
+
+/* Education card */
+.about-section .education-card {
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Work Experience column */
+.about-section .experience-block {
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Heading sits above the timeline */
+.about-section .experience-heading {
+  width: 100%;
+  margin: 0 0 20px;
+}
+
+.about-section .experience-heading h2 {
+  font-size: clamp(1.8rem, 2.5vw, 2.5rem);
+  line-height: 1.15;
+}
+
+/* Timeline stays within its column */
+.about-section .experience-timeline {
+  position: relative;
+  margin-top: 0;
+  min-width: 0;
+}
+
+.about-section .experience-card {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.about-section .experience-card-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px 12px;
+}
+
+.about-section .experience-card-heading h3 {
+  min-width: 0;
+  flex: 1 1 200px;
+}
+
+.about-section .experience-date {
+  max-width: 100%;
+}
+
+/* Responsive layout */
+@media (max-width: 900px) {
+  .about-section > .education-work-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 36px;
+  }
+
+  .about-section .experience-heading h2 {
+    font-size: clamp(1.8rem, 5vw, 2.4rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .about-section > .about-intro {
+    margin-bottom: 24px;
+  }
+
+  .about-section .experience-card {
+    padding: 18px;
+  }
+}
+
+/* Professional Profile above both cards */
+#about > .about-intro {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 0 32px;
+}
+
+#about > .about-intro h2 {
+  max-width: 900px;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1.12;
+  letter-spacing: -0.045em;
+  text-wrap: balance;
+}
+
+#about > .about-intro .section-lead {
+  max-width: 760px;
+  line-height: 1.8;
+}
+
+/* Education and Work Experience side by side */
+#about > .education-work-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: start;
+  gap: 24px;
+  width: 100%;
+  margin: 0;
+}
+
+#about .education-column,
+#about .experience-block {
+  min-width: 0;
+  width: 100%;
+  margin: 0;
+}
+
+/* Education remains a card */
+#about .education-card {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+/* Work Experience heading above the timeline card */
+#about .experience-block > .column-heading {
+  margin: 0 0 18px;
+}
+
+#about .experience-block > .column-heading h2 {
+  font-size: clamp(1.6rem, 2.5vw, 2.4rem);
+  line-height: 1.15;
+}
+
+/* Keep existing timeline design */
+#about .experience-timeline {
+  position: relative;
+  margin-top: 0;
+  min-width: 0;
+}
+
+#about .experience-card {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+/* Stack when the screen becomes narrow */
+@media (max-width: 800px) {
+  #about > .education-work-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+  }
+}
+
+
+/* Professional Profile spans both columns */
+#about > .about-intro {
+  grid-column: 1 / -1;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 0 32px;
+  box-sizing: border-box;
+}
+
+#about > .about-intro .section-lead {
+  width: 100%;
+  max-width: 100%;
+  line-height: 1.8;
+}
+
+/* Profile heading can use the full available width */
+#about > .about-intro h2 {
+  max-width: 100%;
+}
+
+/* Main layout: profile on top, two columns below */
+#about {
+  display: block;
+}
+
+#about > .education-work-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: start;
+  gap: 28px;
+  width: 100%;
+  margin-top: 0;
+}
+
+@media (max-width: 800px) {
+  #about > .education-work-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Align Education and Work Experience card headings */
+#about > .education-work-grid {
+  align-items: start;
+}
+
+#about .education-column > .education-card,
+#about .experience-block {
+  margin-top: 0;
+}
+
+#about .experience-section-heading {
+  min-height: 48px;
+  display: flex;
+  align-items: flex-start;
+  margin: 0;
+  padding: 0 0 12px;
+  box-sizing: border-box;
+}
+
+#about .experience-section-heading .panel-kicker {
+  margin: 0;
+}
+
+/* Keep the timeline directly beneath its heading */
+#about .experience-timeline {
+  margin-top: 0;
+}
+
+/* Two matching main cards */
+#about > .education-work-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: start;
+  gap: 24px;
+  width: 100%;
+  margin: 0;
+}
+
+#about .education-card,
+#about .experience-block.panel {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+
+  padding: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 22px;
+
+  background: rgba(255, 255, 255, 0.60);
+  box-shadow: 0 12px 30px rgba(28, 92, 79, 0.06);
+
+  margin: 0;
+}
+
+/* Matching titles inside the main cards */
+#about .education-card > .panel-kicker,
+#about .experience-heading-panel .panel-kicker {
+  margin: 0 0 24px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  color: #6366f1;
+}
+
+/* No separate background for the Work Experience title */
+#about .experience-heading-panel {
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  border: 0;
+}
+
+/* Preserve the timeline design */
+#about .experience-timeline {
+  position: relative;
+  margin: 0;
+  min-width: 0;
+}
+
+#about .experience-card {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+/* Responsive layout */
+@media (max-width: 800px) {
+  #about > .education-work-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+
+  #about .education-card,
+  #about .experience-block.panel {
+    padding: 22px;
+  }
+}
+
+/* Make individual experience cards transparent */
+#about .experience-card {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border-color: transparent !important;
+}
+
+/* Keep the outer Work Experience card visible */
+#about .experience-block.panel {
+  background: rgba(255, 255, 255, 0.60);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 22px;
+  box-shadow: 0 12px 30px rgba(28, 92, 79, 0.06);
+}
+
+/* Match Work Experience title size with Education degree title */
+#about .experience-card-heading h3,
+#about .education-entry-content h3 {
+  font-size: 1.25rem !important;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: -0.025em;
+}
+
+/* Keep titles readable when the browser is resized */
+@media (max-width: 600px) {
+  #about .experience-card-heading h3,
+  #about .education-entry-content h3 {
+    font-size: 1.1rem !important;
+    line-height: 1.4;
+  }
+}
+
+.experience-card-heading {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 14px;
+}
+
+.experience-company-logo {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  width: 64px;
+  height: 64px;
+  padding: 8px;
+  object-fit: contain;
+  background: rgba(255, 255, 255, 0.65);
+  border-radius: 16px;
+  flex-shrink: 0;
+}
+
+.experience-card-heading h3 {
+  grid-column: 2;
+  grid-row: 1;
+  margin: 0;
+  min-width: 0;
+  font-size: 1.25rem;
+  line-height: 1.4;
+}
+
+.experience-card-heading .experience-date {
+  grid-column: 3;
+  grid-row: 1;
+  white-space: nowrap;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 700px) {
+  .experience-card-heading {
+    grid-template-columns: 48px minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .experience-company-logo {
+    width: 48px;
+    height: 48px;
+    grid-column: 1;
+    grid-row: 1 / span 2;
+  }
+
+  .experience-card-heading h3 {
+    grid-column: 2;
+    grid-row: 1;
+    font-size: 1.1rem;
+  }
+
+  .experience-card-heading .experience-date {
+    grid-column: 2;
+    grid-row: 2;
+    white-space: normal;
+  }
+}
+
+
+/* =========================================================
+   FINAL ROHM LOGO ALIGNMENT
+   Match the Education/CvSU logo-and-text layout.
+   These rules intentionally override earlier experience styles.
+   ========================================================= */
+
+#about .experience-card {
+  min-width: 0;
+  box-sizing: border-box;
+  overflow-wrap: anywhere;
+}
+
+#about .experience-card-heading {
+  display: grid !important;
+  grid-template-columns: 58px minmax(0, 1fr) auto;
+  align-items: start;
+  justify-content: initial;
+  gap: 8px 16px;
+  min-width: 0;
+}
+
+#about .experience-company-logo {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  display: block;
+  width: 58px;
+  height: 58px;
+  min-width: 0;
+  padding: 7px;
+  margin: 0;
+  box-sizing: border-box;
+  object-fit: contain;
+  object-position: center;
+  background: linear-gradient(135deg, rgba(180, 246, 224, .92), rgba(224, 226, 255, .95));
+  border: 1px solid rgba(99, 102, 241, .10);
+  border-radius: 16px;
+  box-shadow: 0 8px 22px rgba(99, 102, 241, .10);
+  flex-shrink: 0;
+}
+
+#about .experience-card-heading h3 {
+  grid-column: 2;
+  grid-row: 1;
+  min-width: 0;
+  margin: 3px 0 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.25rem !important;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: -0.025em;
+  overflow-wrap: anywhere;
+}
+
+#about .experience-card-heading .experience-date {
+  grid-column: 3;
+  grid-row: 1;
+  align-self: start;
+  max-width: 100%;
+  margin-top: 5px;
+  white-space: nowrap;
+  font-size: .8rem;
+  line-height: 1.5;
+}
+
+/* Align company name and details with the text, not with the logo. */
+#about .experience-card > .experience-company,
+#about .experience-card > p,
+#about .experience-card > ul {
+  margin-left: 74px;
+}
+
+#about .experience-card > .experience-company {
+  margin-top: 10px;
+  margin-bottom: 12px;
+}
+
+/* Keep all content inside the card on smaller screens. */
+@media (max-width: 700px) {
+  #about .experience-card-heading {
+    grid-template-columns: 46px minmax(0, 1fr);
+    gap: 6px 12px;
+  }
+
+  #about .experience-company-logo {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    width: 46px;
+    height: 46px;
+    padding: 5px;
+    border-radius: 13px;
+  }
+
+  #about .experience-card-heading h3 {
+    grid-column: 2;
+    grid-row: 1;
+    margin-top: 1px;
+    font-size: 1.1rem !important;
+  }
+
+  #about .experience-card-heading .experience-date {
+    grid-column: 2;
+    grid-row: 2;
+    margin-top: 0;
+    white-space: normal;
+  }
+
+  #about .experience-card > .experience-company,
+  #about .experience-card > p,
+  #about .experience-card > ul {
+    margin-left: 58px;
+  }
+}
+
+@media (max-width: 480px) {
+  #about .experience-card {
+    padding: 18px;
+  }
+
+  #about .experience-card-heading {
+    grid-template-columns: 42px minmax(0, 1fr);
+    column-gap: 10px;
+  }
+
+  #about .experience-company-logo {
+    width: 42px;
+    height: 42px;
+    padding: 4px;
+    border-radius: 12px;
+  }
+
+  #about .experience-card-heading h3 {
+    font-size: 1rem !important;
+    line-height: 1.4;
+  }
+
+  #about .experience-card > .experience-company,
+  #about .experience-card > p,
+  #about .experience-card > ul {
+    margin-left: 0;
+  }
+}
+
+
+/* Fix: when the two-column section makes each card narrow, move the date
+   below the job title instead of squeezing the title into a tiny column. */
+@media (min-width: 701px) and (max-width: 1250px) {
+  #about .experience-card-heading {
+    grid-template-columns: 58px minmax(0, 1fr);
+    gap: 8px 16px;
+    align-items: start;
+  }
+
+  #about .experience-company-logo {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+  }
+
+  #about .experience-card-heading h3 {
+    grid-column: 2;
+    grid-row: 1;
+    min-width: 0;
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+
+  #about .experience-card-heading .experience-date {
+    grid-column: 2;
+    grid-row: 2;
+    margin-top: 0;
+    white-space: normal;
+  }
+
+  #about .experience-card > .experience-company,
+  #about .experience-card > p,
+  #about .experience-card > ul {
+    margin-left: 74px;
+  }
+}
+
+
+/* Responsive fix for a restored/minimized desktop browser window.
+   Stack Work Experience and Education before their two-column layout gets cramped. */
+@media (min-width: 901px) and (max-width: 1250px) {
+  #about > .education-work-grid,
+  .about-section > .education-work-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+    align-items: start;
+    gap: 28px !important;
+  }
+
+  #about .experience-card-heading {
+    grid-template-columns: 58px minmax(0, 1fr) auto;
+    gap: 8px 16px;
+  }
+
+  #about .experience-card-heading h3 {
+    grid-column: 2;
+    grid-row: 1;
+    overflow-wrap: break-word;
+    word-break: normal;
+  }
+
+  #about .experience-card-heading .experience-date {
+    grid-column: 3;
+    grid-row: 1;
+    white-space: normal;
+  }
+}
+.experience-company-logo-wrapper,
+.education-entry-icon {
+  width: 58px;
+  height: 58px;
+  box-sizing: border-box;
+  display: grid;
+  place-items: center;
+  padding: 8px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #d8f7eb, #e5e7ff);
+  box-shadow: 0 8px 22px rgba(99, 102, 241, 0.10);
+  flex-shrink: 0;
+}
+
+.experience-company-logo-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+.experience-company-logo-wrapper {
+  width: 58px;
+  height: 58px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  padding: 8px;
+  box-sizing: border-box;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #d8f7eb, #e5e7ff);
+  box-shadow: 0 8px 22px rgba(99, 102, 241, 0.10);
+}
+
+.experience-company-logo-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
